@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Login from './Pages/Login';
+import AppRoutes from './routes';
+
 import GlobalStyle from './styles/global';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <>
     <GlobalStyle />
-    <Login />
+    <AppRoutes />
   </>
 );
 

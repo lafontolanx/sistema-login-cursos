@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import { Container, Form } from "./styles";
 
-export default function FormPropsTextFields() {
+export default function Login() {
   return (
     <Container>
       <Form>
@@ -11,17 +11,19 @@ export default function FormPropsTextFields() {
         
         <div>
             <TextField
-            id="outlined-helperText"
-            label="E-mail"
-            defaultValue=""
+              id="outlined-helperText"
+              label="E-mail"
+              size="medium"
+              defaultValue=""
             />
         </div>
 
         <div>
             <TextField
-                id="outlined-password-input"
-                label="Password"
-                type="password"
+              id="outlined-password-input"
+              label="Password"
+              type="password"
+              size="medium"
             />
         </div>
 
