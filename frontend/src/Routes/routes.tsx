@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../Pages/Login";
-import UserDashboard from "../Pages/User";
+import UserDashboard from "../Pages/Professor";
 import AdminDashboard from "../Pages/Admin";
 
 export const AppRoutes = () => {
@@ -9,7 +9,7 @@ export const AppRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Login />} />
-                <Route path='/user' element={<UserDashboard />} />
+                <Route path='/professor' element={<UserDashboard />} />
                 <Route path='/admin' element={<AdminDashboard />} />
             </Routes>
         </BrowserRouter>

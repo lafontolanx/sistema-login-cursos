@@ -4,7 +4,7 @@ import { BotaoCustomizado } from './styles'
 interface BotaoProps {
   type: string,
   text: string,
-  onClick: () => void,
+  onClick: any,
   disabled: boolean,
 }
 
