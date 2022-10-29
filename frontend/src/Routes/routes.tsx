@@ -1,19 +1,23 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "../Pages/Login";
-import UserDashboard from "../Pages/Professor";
-import AdminDashboard from "../Pages/Admin";
+import React, { useContext } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-export const AppRoutes = () => {
+import { AuthContext } from '../Context/context'
+import { AuthRoutes } from './auth.routes'
+import { AppRoutes } from './app.routes'
+
+
+export const Routes = () => {
+    const { signed } = useContext(AuthContext)
+
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<Login />} />
-                <Route path='/user' element={<UserDashboard />} />
-                <Route path='/admin' element={<AdminDashboard />} />
-            </Routes>
+            {signed ? (
+                <AppRoutes />
+                ) : (
+                <AuthRoutes />
+            )}
         </BrowserRouter>
     )
 }
 
-export default AppRoutes;
+export default Routes;

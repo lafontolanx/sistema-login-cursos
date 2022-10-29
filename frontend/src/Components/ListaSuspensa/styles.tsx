@@ -29,9 +29,3 @@ export const Select = styled.select`
 
     color: var(--grey-2);
 `
-
-export const Option = styled.option`
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-`

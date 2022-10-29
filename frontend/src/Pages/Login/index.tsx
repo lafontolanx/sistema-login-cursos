@@ -1,28 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Circle, Container, Form, Stripes, Title, Triangle } from "./styles";
 import Botao from "../../Components/BotaoLogin";
 import Input from "../../Components/InputLogin";
-import axios from "axios";
 import circle from "../../assets/circle.svg";
 import triangle from "../../assets/triangle.svg";
 import stripes from "../../assets/stripes.svg";
-
+import { AuthContext } from '../../Context/context'
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate()
 
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     try {
-      const data = await axios.post("http://127.0.0.1:3333/login", {
-        email,
-        password,
-      })
+      const data = signIn(email, password);
 
-      console.log(data)
+      navigate('/user')
+
+      console.log(data);
     } catch (error) {
       console.log(error)
     }

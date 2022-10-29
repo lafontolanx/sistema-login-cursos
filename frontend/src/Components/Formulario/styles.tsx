@@ -17,4 +17,5 @@ export const Form = styled.form`
     border-radius: 20px;
     padding: 36px 50px;
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 `

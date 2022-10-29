@@ -1,7 +1,9 @@
+import React, { useContext } from "react";
 import logo from '../../assets/logo.svg';
 import logout from '../../assets/logout.svg';
 import account from '../../assets/account.svg';
 import search from '../../assets/search.svg';
+import { AuthContext } from '../../Context/context'
 import { 
     Container, 
     Content, 
@@ -20,6 +22,8 @@ interface HeaderProps{
 }
 
 export const Header = ({name}: HeaderProps) => {
+    const { signOut } = useContext(AuthContext)
+
     return (
         <Container>
             <Content>
@@ -33,7 +37,7 @@ export const Header = ({name}: HeaderProps) => {
                 </Search>
                 <AccountType>{name}
                     <Account src={account} alt="Account"/>
-                    <Logout src={logout} alt="Logout"/>
+                    <Logout src={logout} alt="Logout" onClick={signOut} />
                 </AccountType>
             </Content>
         </Container>
